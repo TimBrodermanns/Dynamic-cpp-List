@@ -44,3 +44,28 @@ void printList(Node<T>* anchor) {
     cout << "]" << endl;
 }
 
+template<typename T> unsigned int getLengthOfList(Node<T> *anchor)
+{
+    if (anchor == nullptr) return 0;
+    Node<T>* ptr = anchor;
+    unsigned int counter = 0;
+	do
+	{
+        counter++;
+        ptr = ptr->next;
+    } while (ptr != nullptr);
+    return counter;
+}
+
+template<typename T> Node<T> deepCopy(Node<T> *anchor)
+{
+    if (anchor == nullptr) return nullptr;
+    Node<T>* newAnchor = new Node<T>;
+    Node<T>* ptr = anchor;
+	do
+	{
+        addToList(newAnchor, ptr->data);
+        ptr = ptr->next;
+    } while (ptr != nullptr);
+    return newAnchor;
+}
