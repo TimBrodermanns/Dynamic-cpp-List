@@ -23,7 +23,7 @@ public:
 	//operations
 	T operator[](int pos);
 	List<T> operator+(T Value);
-	List<T> operator=(T Value);
+	List<T> operator=(List<T> value);
 	//bool operator== (List<T> otherList);
 	//bool operator!= (List<T> otherlist);
 
@@ -89,10 +89,15 @@ template<typename T> T List<T>::operator[](int pos)
 }
 template<typename T> List<T> List<T>::operator+(T Value)
 {
-	return NULL;
+	List<T>* newList = new List<T>;
+	newList->anchor = deepCopy(this->anchor);
+	newList->add(Value);
+	return newList;
 }
-template<typename T> List<T> List<T>::operator=(T Value)
+template<typename T> List<T> List<T>::operator=(List<T> value)
 {
-	return NULL;
+	List<T>* newList = new List<T>;
+	newList->anchor = deepCopy(this->anchor);
+	return newList;
 }
 

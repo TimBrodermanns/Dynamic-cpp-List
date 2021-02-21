@@ -5,21 +5,18 @@
 using namespace std;
 
 template <typename T>
-struct Node
-{
+struct Node{
     T data;
     Node<T>* next = nullptr;
 };
 
 template <typename T>
-void addToList(Node<T>*& anchor, T value)
-{
+void addToList(Node<T>*& anchor, T value){
     Node<T>* newValue = new Node<T>;
     newValue->data = value; newValue->next = nullptr;
     if (anchor == nullptr)
         anchor = newValue;
-    else
-    {
+    else{
         Node<T>* ptr = anchor;
         while (ptr->next != nullptr)
             ptr = ptr->next;
@@ -30,11 +27,9 @@ void addToList(Node<T>*& anchor, T value)
 template <typename T>
 void printList(Node<T>* anchor) {
     cout << "[ ";
-    if (anchor != nullptr)
-    {
+    if (anchor != nullptr){
         Node<T>* ptr = anchor;
-        do
-        {
+        do{
             cout << ptr->data;
             if (ptr->next != nullptr) cout << " , ";
             else cout << " ";
@@ -44,68 +39,60 @@ void printList(Node<T>* anchor) {
     cout << "]" << endl;
 }
 
-template<typename T> unsigned int getLengthOfList(Node<T> *anchor)
-{
+template<typename T> unsigned int getLengthOfList(Node<T> *anchor){
     if (anchor == nullptr) return 0;
     Node<T>* ptr = anchor;
     unsigned int counter = 0;
-	do
-	{
+	do{
         counter++;
         ptr = ptr->next;
     } while (ptr != nullptr);
     return counter;
 }
 
-template<typename T> Node<T> deepCopy(Node<T> *anchor)
-{
+template<typename T> Node<T> deepCopy(Node<T> *anchor){
     if (anchor == nullptr) return nullptr;
     Node<T>* newAnchor = new Node<T>;
     Node<T>* ptr = anchor;
-	do
-	{
+	do{
         addToList(newAnchor, ptr->data);
         ptr = ptr->next;
     } while (ptr != nullptr);
     return newAnchor;
 }
 
-template<typename T> void deleteList(Node<T> *anchor)
-{
-    Node<T>* ptr = anchor;
-	do
-	{
+template<typename T> void deleteList(Node<T> *&anchor){
+    Node<T>* ptr = anchor->next;
+	do{
         Node<T>* tmp = ptr->next;
         delete ptr;
         ptr = tmp;
     } while (ptr != nullptr);
+    delete anchor;
+    anchor = nullptr;
 }
 
-template<typename T> T getValueAt(Node<T> *anchor, int pos)
-{
+template<typename T> T getValueAt(Node<T> *anchor, int pos){
     unsigned int counter = 0;
     Node<T> *ptr = anchor;
-	do
-	{
+	do{
 		if(counter == pos) return ptr->data;
         counter++;
         ptr = ptr->next;		
     } while (ptr != nullptr);
 }
 
-template<typename T> bool replaceInList(Node<T> *anchor, T newValue, int pos)
-{
+template<typename T> bool replaceInList(Node<T> *anchor, T newValue, int pos){
     if (pos >= getLengthOfList(anchor)) return false;
     unsigned int count = 0;
-    Node<T> ptr = anchor;
-	do
-	{
-        if (pos == count)
-        {
-            ptr.data = newValue;
+    Node<T> *ptr = anchor;
+	do{
+        if (pos == count){
+            ptr->data = newValue;
             return true;
         }
-        ptr = ptr.next;
+        count++;
+        ptr = ptr->next;
     } while (ptr != nullptr);
     return false;
 }
