@@ -1,5 +1,4 @@
 #pragma once
-
 #include "Node.h"
 #include <string>
 
@@ -23,7 +22,7 @@ public:
 	//operations
 	T operator[](int pos);
 	List<T> operator+(T Value);
-	List<T> operator=(List<T> value);
+	//List<T> operator=(List<T> value);
 	//bool operator== (List<T> otherList);
 	//bool operator!= (List<T> otherlist);
 
@@ -58,11 +57,7 @@ template<typename T> int List<T>::clear()
 }
 template<typename T> string List<T>::getTypeOfList()
 {
-	std::string ret = "";
-	for(int i = 0; i < this->length(); i++)
-	{
-		ret += this->at(i);
-	}
+	string ret = typeid(T).name();
 	return ret;
 }
 
@@ -71,11 +66,8 @@ template<typename T> T* List<T>::toArray()
 {
 	T* ret = new T(getLengthOfList(this->anchor));
 	for(int i = 0; i < this->length(); i++)
-	{
 		ret[i] = this->at(i);
-	}
 	return ret; 
-	
 }
 template<typename T> void List<T>::print()
 {
@@ -92,12 +84,6 @@ template<typename T> List<T> List<T>::operator+(T Value)
 	List<T>* newList = new List<T>;
 	newList->anchor = deepCopy(this->anchor);
 	newList->add(Value);
-	return newList;
-}
-template<typename T> List<T> List<T>::operator=(List<T> value)
-{
-	List<T>* newList = new List<T>;
-	newList->anchor = deepCopy(this->anchor);
 	return newList;
 }
 

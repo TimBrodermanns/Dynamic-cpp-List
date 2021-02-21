@@ -50,7 +50,7 @@ template<typename T> unsigned int getLengthOfList(Node<T> *anchor){
     return counter;
 }
 
-template<typename T> Node<T> deepCopy(Node<T> *anchor){
+template<typename T> Node<T>* deepCopy(Node<T> *anchor){
     if (anchor == nullptr) return nullptr;
     Node<T>* newAnchor = new Node<T>;
     Node<T>* ptr = anchor;
@@ -58,7 +58,7 @@ template<typename T> Node<T> deepCopy(Node<T> *anchor){
         addToList(newAnchor, ptr->data);
         ptr = ptr->next;
     } while (ptr != nullptr);
-    return newAnchor;
+    return &newAnchor;
 }
 
 template<typename T> void deleteList(Node<T> *&anchor){
