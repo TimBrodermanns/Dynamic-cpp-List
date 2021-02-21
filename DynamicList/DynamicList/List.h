@@ -9,6 +9,7 @@ class List
 private:
 	Node<T>* anchor = nullptr;
 public:
+	T at(int pos);
 	int add(T Value);
 	unsigned int length();
 	int replace(int pos, T newValue);
@@ -32,6 +33,11 @@ public:
  * !! gets added to .cpp later, causes bugs if in cpp !!
  */
 
+template<typename T> T List<T>::at(int pos)
+{
+	return getValueAt(this->anchor, pos);
+}
+
 template<typename T> int List<T>::add(T Value)
 {
 	addToList(this->anchor, Value);
@@ -39,25 +45,37 @@ template<typename T> int List<T>::add(T Value)
 }
 template<typename T> unsigned int List<T>::length()
 {
-	return NULL;
+	return getLengthOfList(this->anchor);
 }
 template<typename T> int List<T>::replace(int pos, T newValue)
 {
-	return NULL;
+	return replaceInList(this->anchor, newValue, pos);
 }
 template<typename T> int List<T>::clear()
 {
-	return NULL;
+	deleteList(this->anchor);
+	return 1;
 }
 template<typename T> string List<T>::getTypeOfList()
 {
-	return NULL;
+	std::string ret = "";
+	for(int i = 0; i < this->length(); i++)
+	{
+		ret += this->at(i);
+	}
+	return ret;
 }
 
 //parsing
 template<typename T> T* List<T>::toArray()
 {
-	return NULL;
+	T* ret = new T(getLengthOfList(this->anchor));
+	for(int i = 0; i < this->length(); i++)
+	{
+		ret[i] = this->at(i);
+	}
+	return ret; 
+	
 }
 template<typename T> void List<T>::print()
 {
@@ -67,7 +85,7 @@ template<typename T> void List<T>::print()
 //operations
 template<typename T> List<T> List<T>::operator[](int pos)
 {
-	return NULL;
+	return getValueAt(this->anchor, pos);
 }
 template<typename T> List<T> List<T>::operator+(T Value)
 {

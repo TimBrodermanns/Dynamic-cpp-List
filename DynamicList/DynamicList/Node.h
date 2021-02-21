@@ -69,3 +69,44 @@ template<typename T> Node<T> deepCopy(Node<T> *anchor)
     } while (ptr != nullptr);
     return newAnchor;
 }
+
+template<typename T> void deleteList(Node<T> anchor)
+{
+    Node<T>* ptr = anchor;
+	do
+	{
+        Node<T>* tmp = ptr->next;
+        delete ptr;
+        ptr = tmp;
+    } while (ptr != nullptr);
+}
+
+template<typename T> T getValueAt(Node<T> anchor, int pos)
+{
+    unsigned int counter = 0;
+    Node<T> ptr = anchor;
+	do
+	{
+		if(counter == pos) return ptr.data;
+        counter++;
+        ptr = ptr.next;		
+    } while (ptr != nullptr);
+    return '\0';
+}
+
+template<typename T> bool replaceInList(Node<T> anchor, T newValue, int pos)
+{
+    if (pos >= getLengthOfList(anchor)) return false;
+    unsigned int count = 0;
+    Node<T> ptr = anchor;
+	do
+	{
+        if (pos == count)
+        {
+            ptr.data = newValue;
+            return true;
+        }
+        ptr = ptr.next;
+    } while (ptr != nullptr);
+    return false;
+}
