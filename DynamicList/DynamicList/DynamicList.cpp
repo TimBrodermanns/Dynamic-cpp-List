@@ -13,5 +13,8 @@ int main()
 	{
 		cout << Mylist.at(i);
 	}
+	cout << endl;
+
+	cout << Mylist[5] << endl;
 	
 }

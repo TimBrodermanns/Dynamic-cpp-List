@@ -21,7 +21,7 @@ public:
 	void print();
 
 	//operations
-	List<T> operator[](int pos);
+	T operator[](int pos);
 	List<T> operator+(T Value);
 	List<T> operator=(T Value);
 	//bool operator== (List<T> otherList);
@@ -83,7 +83,7 @@ template<typename T> void List<T>::print()
 }
 
 //operations
-template<typename T> List<T> List<T>::operator[](int pos)
+template<typename T> T List<T>::operator[](int pos)
 {
 	return getValueAt(this->anchor, pos);
 }
