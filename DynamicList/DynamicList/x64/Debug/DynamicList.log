@@ -1,34 +1,39 @@
 ﻿  DynamicList.cpp
-C:\Users\timbr\source\repos\DynamicLists\Dynamic-cpp-List\DynamicList\DynamicList\DynamicList.cpp(23,20): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
-C:\Users\timbr\source\repos\DynamicLists\Dynamic-cpp-List\DynamicList\DynamicList\List.h(68,19): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
-C:\Users\timbr\source\repos\DynamicLists\Dynamic-cpp-List\DynamicList\DynamicList\List.h(66): message : beim Kompilieren der Klasse Vorlage-Memberfunktion "T *List<T>::toArray(void)"
+C:\Users\timbr\source\repos\DynamicLists\Dynamic-cpp-List\DynamicList\DynamicList\DynamicList.cpp(36,20): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+C:\Users\timbr\source\repos\DynamicLists\Dynamic-cpp-List\DynamicList\DynamicList\List.h(108,22): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+C:\Users\timbr\source\repos\DynamicLists\Dynamic-cpp-List\DynamicList\DynamicList\List.h(105): message : beim Kompilieren der Klasse Vorlage-Memberfunktion "bool stdList::List<int>::compare(stdList::List<int> *&)"
+C:\Users\timbr\source\repos\DynamicLists\Dynamic-cpp-List\DynamicList\DynamicList\DynamicList.cpp(25): message : Siehe Verweis auf die gerade kompilierte Instanziierung "bool stdList::List<int>::compare(stdList::List<int> *&)" der Funktions-Vorlage.
+C:\Users\timbr\source\repos\DynamicLists\Dynamic-cpp-List\DynamicList\DynamicList\DynamicList.cpp(9): message : Siehe Verweis auf die gerade kompilierte Klasse Vorlage-Instanziierung "stdList::List<int>".
+C:\Users\timbr\source\repos\DynamicLists\Dynamic-cpp-List\DynamicList\DynamicList\List.h(89,20): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+C:\Users\timbr\source\repos\DynamicLists\Dynamic-cpp-List\DynamicList\DynamicList\List.h(87): message : beim Kompilieren der Klasse Vorlage-Memberfunktion "T *stdList::List<T>::toArray(void)"
           with
           [
               T=int
           ]
-C:\Users\timbr\source\repos\DynamicLists\Dynamic-cpp-List\DynamicList\DynamicList\DynamicList.cpp(22): message : Siehe Verweis auf die gerade kompilierte Instanziierung "T *List<T>::toArray(void)" der Funktions-Vorlage.
+C:\Users\timbr\source\repos\DynamicLists\Dynamic-cpp-List\DynamicList\DynamicList\DynamicList.cpp(35): message : Siehe Verweis auf die gerade kompilierte Instanziierung "T *stdList::List<T>::toArray(void)" der Funktions-Vorlage.
           with
           [
               T=int
           ]
-C:\Users\timbr\source\repos\DynamicLists\Dynamic-cpp-List\DynamicList\DynamicList\DynamicList.cpp(7): message : Siehe Verweis auf die gerade kompilierte Klasse Vorlage-Instanziierung "List<int>".
-C:\Users\timbr\source\repos\DynamicLists\Dynamic-cpp-List\DynamicList\DynamicList\Node.h(86,13): warning C4018: ">=": Konflikt zwischen "signed" und "unsigned"
-C:\Users\timbr\source\repos\DynamicLists\Dynamic-cpp-List\DynamicList\DynamicList\List.h(51): message : Siehe Verweis auf die gerade kompilierte Instanziierung "bool replaceInList<T>(Node<T> *,T,int)" der Funktions-Vorlage.
+C:\Users\timbr\source\repos\DynamicLists\Dynamic-cpp-List\DynamicList\DynamicList\Node.h(89,13): warning C4018: ">=": Konflikt zwischen "signed" und "unsigned"
+C:\Users\timbr\source\repos\DynamicLists\Dynamic-cpp-List\DynamicList\DynamicList\List.h(65): message : Siehe Verweis auf die gerade kompilierte Instanziierung "bool replaceInList<T>(Node<T> *,T,int)" der Funktions-Vorlage.
           with
           [
               T=int
           ]
-C:\Users\timbr\source\repos\DynamicLists\Dynamic-cpp-List\DynamicList\DynamicList\List.h(50): message : beim Kompilieren der Klasse Vorlage-Memberfunktion "int List<int>::replace(int,T)"
+C:\Users\timbr\source\repos\DynamicLists\Dynamic-cpp-List\DynamicList\DynamicList\List.h(64): message : beim Kompilieren der Klasse Vorlage-Memberfunktion "int stdList::List<int>::replace(int,T)"
           with
           [
               T=int
           ]
-C:\Users\timbr\source\repos\DynamicLists\Dynamic-cpp-List\DynamicList\DynamicList\DynamicList.cpp(19): message : Siehe Verweis auf die gerade kompilierte Instanziierung "int List<int>::replace(int,T)" der Funktions-Vorlage.
+C:\Users\timbr\source\repos\DynamicLists\Dynamic-cpp-List\DynamicList\DynamicList\DynamicList.cpp(29): message : Siehe Verweis auf die gerade kompilierte Instanziierung "int stdList::List<int>::replace(int,T)" der Funktions-Vorlage.
           with
           [
               T=int
           ]
-C:\Users\timbr\source\repos\DynamicLists\Dynamic-cpp-List\DynamicList\DynamicList\Node.h(83): warning C4715: "getValueAt<List<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >": Nicht alle Codepfade geben einen Wert zurück.
-C:\Users\timbr\source\repos\DynamicLists\Dynamic-cpp-List\DynamicList\DynamicList\Node.h(83): warning C4715: "getValueAt<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >": Nicht alle Codepfade geben einen Wert zurück.
-C:\Users\timbr\source\repos\DynamicLists\Dynamic-cpp-List\DynamicList\DynamicList\Node.h(83): warning C4715: "getValueAt<int>": Nicht alle Codepfade geben einen Wert zurück.
+  List.cpp
+  Code wird generiert...
+C:\Users\timbr\source\repos\DynamicLists\Dynamic-cpp-List\DynamicList\DynamicList\Node.h(86): warning C4715: "getValueAt<stdList::List<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >": Nicht alle Codepfade geben einen Wert zurück.
+C:\Users\timbr\source\repos\DynamicLists\Dynamic-cpp-List\DynamicList\DynamicList\Node.h(86): warning C4715: "getValueAt<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >": Nicht alle Codepfade geben einen Wert zurück.
+C:\Users\timbr\source\repos\DynamicLists\Dynamic-cpp-List\DynamicList\DynamicList\Node.h(86): warning C4715: "getValueAt<int>": Nicht alle Codepfade geben einen Wert zurück.
   DynamicList.vcxproj -> C:\Users\timbr\source\repos\DynamicLists\Dynamic-cpp-List\DynamicList\x64\Debug\DynamicList.exe

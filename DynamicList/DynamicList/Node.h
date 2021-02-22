@@ -50,18 +50,21 @@ template<typename T> unsigned int getLengthOfList(Node<T> *anchor){
     return counter;
 }
 
-template<typename T> Node<T>* deepCopy(Node<T> *anchor){
-    if (anchor == nullptr) return nullptr;
-    Node<T>* newAnchor = new Node<T>;
-    Node<T>* ptr = anchor;
-	do{
-        addToList(newAnchor, ptr->data);
-        ptr = ptr->next;
-    } while (ptr != nullptr);
-    return &newAnchor;
+template<typename T> Node<T>* deepCopy(Node<T> * orig){
+    if (orig == nullptr) {
+        return nullptr;
+    }
+    Node<T>* newAnker = new Node<T>;
+    newAnker->data = orig->data;
+    while (orig->next != nullptr) {
+        orig = orig->next;
+        addToList(newAnker, orig->data);
+    }
+    return newAnker;
 }
 
 template<typename T> void deleteList(Node<T> *&anchor){
+    if (anchor == nullptr) return;
     Node<T>* ptr = anchor->next;
 	do{
         Node<T>* tmp = ptr->next;
@@ -95,4 +98,20 @@ template<typename T> bool replaceInList(Node<T> *anchor, T newValue, int pos){
         ptr = ptr->next;
     } while (ptr != nullptr);
     return false;
+}
+
+template<typename T> string ListToString(Node<T> anchor)
+{
+    string ret = "[ ";
+    if (anchor != nullptr) {
+        Node<T>* ptr = anchor;
+        do {
+            ret += ptr->data;
+            if (ptr->next != nullptr) ret += " , ";
+            else ret += " ";
+            ptr = ptr->next;
+        } while (ptr != nullptr);
+    }
+    ret+= "]";
+    return ret;
 }

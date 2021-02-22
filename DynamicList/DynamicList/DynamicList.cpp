@@ -1,12 +1,13 @@
 #include <iostream>
 #include "List.h"
+
 using namespace std;
+using namespace stdList;
 
 int main()
 {
 	List<int> Mylist;
-	cout << "Type of list is: " << Mylist.getTypeOfList() << endl;
-
+	cout << "Type of list is: " << Mylist.getTypeOfList() << endl;	
 	Mylist.print();
 
 	for (int i = 1; i <= 10; i++)
@@ -14,10 +15,22 @@ int main()
 	Mylist.print();
 	
 	cout << "length of list is: " << Mylist.length() << endl;
+
+
+	List<int> * Mylist1 = new List<int>(Mylist);
+
+	Mylist.print();
+	Mylist1->print();
+	
+	if (Mylist.compare(Mylist1)) cout << "Equal" << endl;
+	else cout << " not Equal" << endl;
 	
 	for(int i = 1; i <= 10; i++)
 		Mylist.replace(i, i * 100);
 	Mylist.print();
+
+	if (Mylist.compare(Mylist1)) cout << "Equal" << endl;
+	else cout << " not Equal" << endl;
 	
 	int* ary = Mylist.toArray();
 	for (int i = 0; i < Mylist.length(); i++)
@@ -26,10 +39,8 @@ int main()
 	}
 	cout << endl;
 	
-	Mylist.clear(); //  --> Still buggy <--
+	Mylist.clear();
 	Mylist.print();
-
-
 }
 
 
