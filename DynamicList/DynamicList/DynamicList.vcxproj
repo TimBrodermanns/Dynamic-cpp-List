@@ -139,12 +139,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="double_chain_node.cpp" />
     <ClCompile Include="DynamicList.cpp" />
     <ClCompile Include="List.cpp" />
+    <ClCompile Include="performanceList.cpp" />
+    <ClCompile Include="Queue.cpp" />
+    <ClCompile Include="Stack.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="double_chain_node.h" />
     <ClInclude Include="List.h" />
-    <ClInclude Include="Node.h" />
+    <ClInclude Include="list_node.h" />
+    <ClInclude Include="performanceList.h" />
+    <ClInclude Include="Queue.h" />
+    <ClInclude Include="Stack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

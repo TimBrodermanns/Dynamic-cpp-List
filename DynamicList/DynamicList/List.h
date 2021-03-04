@@ -1,17 +1,17 @@
 #pragma once
-#include "Node.h"
+#include "list_node.h"
 #include <string>
 
-namespace stdList{
+namespace stdList {
 	template<typename T>
 	class List
 	{
 	private:
-		Node<T>* anchor = nullptr;
+		list_node<T>* anchor = nullptr;
 	public:
 
-		List(){}
-		
+		List() {}
+
 		List(const List& s) {
 			this->anchor = deepCopy(s.anchor);
 		}
@@ -19,15 +19,19 @@ namespace stdList{
 		~List() {
 			deleteList(this->anchor);
 		}
-		
+
 		T at(int pos);
 		int add(T Value);
 		unsigned int length();
 		int replace(int pos, T newValue);
 		int clear();
 		string getTypeOfList();
-		bool compare(List<T> *&other);
-		
+		bool compare(List<T>*& other);
+		void deleteAt(unsigned int pos)
+		{
+			deleteValueat(this->anchor, pos);
+		}
+
 
 		//parsing
 		T* toArray();
@@ -40,11 +44,9 @@ namespace stdList{
 		T operator[](int pos);
 
 	};
-
 	/*
 	 * !! gets added to .cpp later, causes bugs if in cpp !!
 	 */
-
 	template<typename T> T List<T>::at(int pos)
 	{
 		return getValueAt(this->anchor, pos);
@@ -85,9 +87,9 @@ namespace stdList{
 	template<typename T> T* List<T>::toArray()
 	{
 		T* ret = new T(getLengthOfList(this->anchor));
-		for(int i = 0; i < this->length(); i++)
+		for (int i = 0; i < this->length(); i++)
 			ret[i] = this->at(i);
-		return ret; 
+		return ret;
 	}
 	template<typename T> void List<T>::print()
 	{
@@ -100,7 +102,7 @@ namespace stdList{
 		return getValueAt(this->anchor, pos);
 	}
 
-	template <typename T> bool List<T>::compare(List<T> *&other)
+	template <typename T> bool List<T>::compare(List<T>*& other)
 	{
 		if (this->length() == other->length())
 		{
@@ -115,7 +117,7 @@ namespace stdList{
 		else
 		{
 			return false;
-		} 
+		}
 		return true;
 	}
 
@@ -132,7 +134,5 @@ namespace stdList{
 		this->add(c);
 		return ret;
 	}
-
-	
 }
 
